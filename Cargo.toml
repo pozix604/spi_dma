@@ -1,0 +1,18 @@
+[package]
+name = "spi_dma"
+version = "0.1.0"
+authors = ["aaa <aaa@local>"]
+edition = "2018"
+
+[dependencies]
+cortex-m = { version = "*" }
+cortex-m-rt = { version = "*" }
+embedded-hal = { version = "*" }
+stm32f1xx-hal =  { version = "*", features = ["rt", "stm32f103", "medium"] }
+panic-halt = { version = "*", optional = true }
+
+[profile.release]
+codegen-units = 1
+debug = true
+lto = true
+opt-level = "z"
